@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title "Recette : " ~ slug %}
+
+{% block body %}
+	{{ "Je m'appele : " ~ personne.nom ~ ", j'ai " ~ personne.age ~ " ans" }}
+	<br/>
+    {{"Je prefere manger une " ~ slug }}
+
+{% endblock %}
