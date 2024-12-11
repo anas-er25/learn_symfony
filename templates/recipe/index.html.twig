@@ -3,26 +3,18 @@
 {% block title "Toutes les Recettes" %}
 
 {% block body %}
-<div>
-	<p>lorem ipsum dolor sit amet, consectetur adipis null a ante dict     sit amet et al. Lorem Ipsum is simply dummy text of the printing and types grammar used for large
-			text documents. Lorem Ipsum is simply dummy text of the printing and types grammar used for large text documents. Lorem Ipsum is simply dummy text of the printing and types grammar used for large text documents.
-            </p>
-	<ul>
-		<li>
-			<a href="{{ url('recipe.show', {id: 1, slug: "pate-bolognaise"}) }}">Pate Bolognaise<a/>
-        </li>
-		<li>
-            <a href="{{ url('recipe.show', {id: 2, slug: "caffe-chokola"}) }}">Caffe Chokola<a/>
+	<div>
+		<p>lorem ipsum dolor sit amet, consectetur adipis null a ante dict     sit amet et al. Lorem Ipsum is simply dummy text of the printing and types grammar used for large
+						text documents. Lorem Ipsum is simply dummy text of the printing and types grammar used for large text documents. Lorem Ipsum is simply dummy text of the printing and types grammar used for large text documents.
+		</p>
+		<ul>
+			{% for recipe in recipes %}
+				<li>
+					<a href="{{ url('recipe.show', {id: recipe.id, slug: recipe.slug }) }}">{{ recipe.title }}<a/>
+				</li>
+			{% endfor %}
+				
+		</ul>
 
-        </li>
-		<li>
-            <a href="{{ url('recipe.show', {id: 3, slug: "pain-fromage"}) }}">Pain Fromage<a/>
-
-        </li>
-		<li>
-            <a href="{{ url('recipe.show', {id: 4, slug: "monad-cola"}) }}">Monad Cola<a/>
-
-        </li>
-	</ul>
-    
-</div> {% endblock %}
+	</div>
+{% endblock %}

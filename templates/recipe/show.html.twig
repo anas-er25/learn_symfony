@@ -1,10 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title "Recette : " ~ slug %}
+{% block title "Recette : " ~ recipe.title %}
+
 
 {% block body %}
-	{{ "Je m'appele : " ~ personne.nom ~ ", j'ai " ~ personne.age ~ " ans" }}
+	{# {{ "Je m'appele : " ~ personne.nom ~ ", j'ai " ~ personne.age ~ " ans" }}
 	<br/>
-    {{"Je prefere manger une " ~ slug }}
+    {{"Je prefere manger une " ~ slug }} #}
+	<h1 class='container text-center'>{{ recipe.title }}</h1>
+	<p>{{ recipe.content | nl2br}}</p>
 
 {% endblock %}
